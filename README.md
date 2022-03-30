@@ -87,7 +87,7 @@ const echo2: Function = (a:number, b: number | string = 0): void => {} // defaul
 $ tsc --init
 ```
 - `tsconfig.json` 설정
-```json
+```javascript
 {
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
