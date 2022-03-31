@@ -1,4 +1,14 @@
-import { Invoice } from "./classes/Invoice.js";
+"use strict";
+class Invoice {
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+    }
+    format() {
+        return `format => ${this.client} : ${this.details} : ${this.amount}`;
+    }
+}
 const invOne = new Invoice('aa', 'bb', 11);
 const invTwo = new Invoice('cc', 'dd', 22);
 console.log(invOne, invOne.format());

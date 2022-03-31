@@ -1,6 +1,18 @@
-let greeting: (a: string, b: string) => void;
-greeting = (name: string, message: string) => {
-    console.log(name, message);
-}
+import { Invoice } from "./classes/Invoice.js";
 
-greeting('aa', 'cc');
+const invOne = new Invoice('aa', 'bb', 11);
+const invTwo = new Invoice('cc', 'dd', 22);
+console.log(invOne, invOne.format());
+console.log(invTwo, invTwo.format());
+
+invTwo.amount = 33;
+console.log(invTwo, invTwo.format());
+
+const invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
+
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format());
+});
