@@ -297,3 +297,9 @@ const doc4: Resource<string[]> = {
     data: ['red', 'green', 'blue']
 }
 ```
+
+## tuple
+```typescript
+let values: [string, string, number];
+values = [tofrom.value, details.value, amount.valueAsNumber];
+```
