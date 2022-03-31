@@ -238,6 +238,13 @@ class Invoice {
 }
 ```
 
+## interface
+```typescript
+interface HasFormatter {
+    format(): string;
+}
+```
+
 ## module 사용
 - tsconfig.json 설정
 ```json
