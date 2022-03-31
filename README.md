@@ -16,14 +16,15 @@ $ sudo npm uninstall typescript -g
 $ tsc -v
 ```
 
-## typescript 파일 생성
+## Typescript 파일 생성
 ```bash
-## 확장자는 .ts
+# 확장자는 .ts
 script.ts
 ```
 
-## typescript 컴파일
+## Typescript 컴파일
 - `tsc` TypeScript Compiler
+- `tsc` 명령어를 사용해서 컴파일하면 `.ts` 파일이 `.js` 로 변환된다
 ```bash
 ## script.js 파일로 컴파일
 $ tsc script.ts
@@ -81,8 +82,8 @@ const echo1: Function = (a:number, b?:number | string): void => {} // optional
 const echo2: Function = (a:number, b: number | string = 0): void => {} // default value
 ```
 
-## tsc init
-- `tsconfig.json` 파일 생성
+## Typescript config
+- `tsconfig.json` 생성
 ```
 $ tsc --init
 ```
@@ -133,11 +134,179 @@ $ tsc -w
 type stringOrNumber = string | number;
 type userObj = {name: string, uid: stringOrNumber};
 
-const logDetails = (uid: stringOrNumber, item: string) => {
+const logDetails = (uid: stringOrNumber, item: string) => { // 타입 사용
     console.log(`logDetails ${item} ${uid}`);
 }
 
-const greetHello = (user: userObj) => {
+const greetHello = (user: userObj) => { // 타입 사용
     console.log(`greetHello ${user.name}`);
 }
+```
+
+## DOM type casting
+```javascript
+// 끝에 느낌표(!) 를 추가
+const anchor3 = document.querySelector('a')!;
+```
+```typescript
+// as 로 타입 캐스팅
+const form = document.querySelector('.new-item-form') as HTMLFormElement;
+
+const type = document.querySelector('#type') as HTMLSelectElement;
+const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
+const details = document.querySelector('#details') as HTMLInputElement;
+const amount = document.querySelector('#amount') as HTMLInputElement;
+
+form.addEventListener('submit', (e: Event) => {
+    e.preventDefault();
+
+    console.log(
+        type.value,
+        tofrom.value,
+        details.value,
+        amount.valueAsNumber
+    );
+});
+```
+
+## class 사용
+- class 정의
+```typescript
+// class 정의
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
+
+    constructor(c: string, d: string, a: number) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+
+    format() {
+        return `${this.client} : ${this.details} : ${this.amount}`;
+    }
+}
+```
+- class 사용
+```typescript
+// class 사용
+const invOne = new Invoice('aa', 'bb', 11);
+const invTwo = new Invoice('cc', 'dd', 22);
+console.log(invOne, invOne.format());
+console.log(invTwo, invTwo.format());
+
+invTwo.client = 'ee';
+console.log(invTwo, invTwo.format());
+
+const invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
+```
+
+## access modifier
+- public
+- private
+- readonly
+```typescript
+class Invoice {
+    // class 안에서 정의
+    readonly client: string;
+    private details: string;
+    public amount: number;
+
+    constructor(c: string, d: string, a: number) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    ...
+}
+```
+```typescript
+class Invoice {
+  
+  constructor(
+        // constructor 안에서 정의
+        readonly client: string,
+        private details: string,
+        public amount: number
+    ) {}
+    ...
+}
+```
+
+## interface
+```typescript
+interface HasFormatter {
+    format(): string;
+}
+```
+
+## module 사용
+- tsconfig.json 설정
+```json
+"target": "es6",
+"module": "es2015",
+```
+- module 정의 `export`
+```typescript
+// src/classes/Invoice.ts
+export class Invoice {
+}
+```
+- module 사용 `import`
+```typescript
+// src/script.ts
+import { Invoice } from "./classes/Invoice.js"; // .js 로 추가
+```
+- `script` 태그에 `type="module"` 추가
+```html
+<!-- index.html -->
+<script type="module" src="js/script.js"></script>
+```
+
+## generic
+```typescript
+const addUID = <T>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+
+const addUID = <T extends object>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+
+const addUID = <T extends {name: string}>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+```
+```typescript
+interface Resource<T> {
+    uid: number;
+    resourceName: string;
+    data: T;
+}
+
+const doc3: Resource<object> = {
+    uid: 1,
+    resourceName: 'person',
+    data: { name: 'james' }
+}
+
+const doc4: Resource<string[]> = {
+    uid: 2,
+    resourceName: 'colors',
+    data: ['red', 'green', 'blue']
+}
+```
+
+## tuple
+```typescript
+let values: [string, string, number];
+values = [tofrom.value, details.value, amount.valueAsNumber];
 ```

@@ -1,5 +1,5 @@
-import { Invoice } from './classes/Invoice.js';
-import { Payment } from './classes/Payment.js';
+import { Invoice } from './classes/Invoice';
+import { Payment } from './classes/Payment';
 (() => {
     const form = document.querySelector('.new-item-form');
     const type = document.querySelector('#type');
