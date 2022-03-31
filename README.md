@@ -260,3 +260,40 @@ import { Invoice } from "./classes/Invoice.js"; // .js 로 추가
 <!-- index.html -->
 <script type="module" src="js/script.js"></script>
 ```
+
+## generic
+```typescript
+const addUID = <T>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+
+const addUID = <T extends object>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+
+const addUID = <T extends {name: string}>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return {...obj, uid};
+}
+```
+```typescript
+interface Resource<T> {
+    uid: number;
+    resourceName: string;
+    data: T;
+}
+
+const doc3: Resource<object> = {
+    uid: 1,
+    resourceName: 'person',
+    data: { name: 'james' }
+}
+
+const doc4: Resource<string[]> = {
+    uid: 2,
+    resourceName: 'colors',
+    data: ['red', 'green', 'blue']
+}
+```
