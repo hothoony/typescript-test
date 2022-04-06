@@ -84,49 +84,51 @@ const echo2: Function = (a:number, b: number | string = 0): void => {} // defaul
 
 ## Typescript config
 - `tsconfig.json` 생성
-```
-$ tsc --init
-```
+    ```
+    $ tsc --init
+    ```
+
 - `tsconfig.json` 설정
-```javascript
-{
-  "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    ```javascript
+    {
+    "compilerOptions": {
+        /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
-    /* Projects */
+        /* Projects */
 
-    /* Language and Environment */
-    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+        /* Language and Environment */
+        "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
 
-    /* Modules */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    "rootDirs": ["./src"],                                   /* Allow multiple folders to be treated as one when resolving modules. */
+        /* Modules */
+        "module": "commonjs",                                /* Specify what module code is generated. */
+        "rootDirs": ["./src"],                                   /* Allow multiple folders to be treated as one when resolving modules. */
 
-    /* JavaScript Support */
+        /* JavaScript Support */
 
-    /* Emit */
-    "outDir": "./public/js",                                   /* Specify an output folder for all emitted files. */
+        /* Emit */
+        "outDir": "./public/js",                                   /* Specify an output folder for all emitted files. */
 
-    /* Interop Constraints */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+        /* Interop Constraints */
+        "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
+        "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
 
-    /* Type Checking */
-    "strict": true,                                      /* Enable all strict type-checking options. */
+        /* Type Checking */
+        "strict": true,                                      /* Enable all strict type-checking options. */
 
-    /* Completeness */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  },
-  "include": ["src"]
-}
-```
+        /* Completeness */
+        "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    },
+    "include": ["src"]
+    }
+    ```
+
 - `tsconfig.json` 을 이용해서 compile
-```bash
-$ tsc
+    ```bash
+    $ tsc
 
-## watch
-$ tsc -w
-```
+    ## watch
+    $ tsc -w
+    ```
 
 ## type alias
 ```typescript
@@ -170,9 +172,10 @@ form.addEventListener('submit', (e: Event) => {
 ```
 
 ## class 사용
-- class 정의
+
 ```typescript
 // class 정의
+
 class Invoice {
     client: string;
     details: string;
@@ -189,9 +192,10 @@ class Invoice {
     }
 }
 ```
-- class 사용
+
 ```typescript
 // class 사용
+
 const invOne = new Invoice('aa', 'bb', 11);
 const invTwo = new Invoice('cc', 'dd', 22);
 console.log(invOne, invOne.format());
@@ -207,9 +211,9 @@ console.log(invoices);
 ```
 
 ## access modifier
-- public
-- private
-- readonly
+- `public`
+- `private`
+- `readonly`
 ```typescript
 class Invoice {
     // class 안에서 정의
