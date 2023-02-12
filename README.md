@@ -4,7 +4,7 @@
 - support modern feature
 - extra feature
 
-## Typescript install
+## Typescript 설치하기
 ```bash
 ## 설치
 $ sudo npm install typescript -g
@@ -38,48 +38,6 @@ $ tsc script.ts --outFile script-bundle.js
 $ tsc script.ts -w
 [10:21:31 AM] Starting compilation in watch mode...
 [10:21:32 AM] Found 0 errors. Watching for file changes.
-```
-
-## type 정의
-```typescript
-// explicit types
-let userName: string;
-let userAge: number;
-let isLogin: boolean;
-
-// array
-let ary0: string[] = [];
-let ary1: number[] = [];
-let ary2: boolean[] = [];
-
-let ary3: object[] = [];
-let ary4: {}[] = [];
-let ary5: {name: string, age: number}[] = [];
-
-// union type
-let mixed: (string|number|boolean)[] = [];
-let uid: string|number;
-let uid2: (string|number);
-
-// object
-let user: {
-    name: string,
-    age: number,
-    isLogin: boolean
-};
-
-// any
-let age: any;
-
-let mixed: any[] = [];
-
-let mixed: {name: any, age: any};
-
-// Function
-let greet: Function;
-const echo0: Function = (a:number, b:number | string): void => {}
-const echo1: Function = (a:number, b?:number | string): void => {} // optional
-const echo2: Function = (a:number, b: number | string = 0): void => {} // default value
 ```
 
 ## Typescript config
@@ -129,6 +87,70 @@ const echo2: Function = (a:number, b: number | string = 0): void => {} // defaul
     ## watch
     $ tsc -w
     ```
+
+## Visual Studio Code 에서 .ts 파일 바로 실행하기
+
+1. `sourceMap: true` 활성화
+    ```json
+    // tsconfig.json
+
+    "compilerOptions": {
+        // ...
+        "sourceMap": true,
+        // ...
+    }
+    ```
+
+1. command + shift + B
+    - `tsc: watch - tsconfig.json` 선택
+
+1. `F5` 를 눌러서 디버깅 실행
+
+1. `DEBUG CONSOLE` 에서 확인
+
+
+## type 정의
+```typescript
+// explicit types
+let userName: string;
+let userAge: number;
+let isLogin: boolean;
+
+// array
+let ary0: string[] = [];
+let ary1: number[] = [];
+let ary2: boolean[] = [];
+
+let ary3: object[] = [];
+let ary4: {}[] = [];
+let ary5: {name: string, age: number}[] = [];
+
+// union type
+let mixed: (string|number|boolean)[] = [];
+let uid: string|number;
+let uid2: (string|number);
+
+// object
+let user: {
+    name: string,
+    age: number,
+    isLogin: boolean
+};
+
+// any
+let age: any;
+
+let mixed: any[] = [];
+
+let mixed: {name: any, age: any};
+
+// Function
+let greet: Function;
+const echo0: Function = (a:number, b:number | string): void => {}
+const echo1: Function = (a:number, b?:number | string): void => {} // optional
+const echo2: Function = (a:number, b: number | string = 0): void => {} // default value
+```
+
 
 ## type alias
 ```typescript

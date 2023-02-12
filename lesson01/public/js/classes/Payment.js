@@ -8,3 +8,4 @@ export class Payment {
         return `format => ${this.recipient} : ${this.details} : ${this.amount}`;
     }
 }
+//# sourceMappingURL=Payment.js.map

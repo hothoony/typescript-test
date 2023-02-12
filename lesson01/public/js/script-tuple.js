@@ -18,3 +18,4 @@ import { Payment } from './classes/Payment';
     doc = new Payment(...values);
     console.log(doc);
 })();
+//# sourceMappingURL=script-tuple.js.map

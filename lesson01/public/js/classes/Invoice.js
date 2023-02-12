@@ -8,3 +8,4 @@ export class Invoice {
         return `format => ${this.client} : ${this.details} : ${this.amount}`;
     }
 }
+//# sourceMappingURL=Invoice.js.map

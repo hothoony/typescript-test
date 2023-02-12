@@ -27,3 +27,4 @@
     console.log(doc3);
     console.log(doc4);
 })();
+//# sourceMappingURL=script-generic.js.map

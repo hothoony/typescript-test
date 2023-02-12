@@ -22,3 +22,4 @@
     mixed = { name: 20, age: 'james' };
     console.log(mixed);
 })();
+//# sourceMappingURL=script-any.js.map

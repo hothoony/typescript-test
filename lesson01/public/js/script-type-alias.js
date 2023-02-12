@@ -13,3 +13,4 @@
     greetHello({ name: 'james', uid: 11 });
     greetHelloAgain({ name: 'james', uid: 11 });
 })();
+//# sourceMappingURL=script-type-alias.js.map

@@ -21,3 +21,4 @@
     invoices.push(invTwo);
     console.log(invoices);
 })();
+//# sourceMappingURL=script-class.js.map

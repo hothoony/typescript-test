@@ -23,3 +23,4 @@
         console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
     });
 })();
+//# sourceMappingURL=script-dom-type-casting.js.map

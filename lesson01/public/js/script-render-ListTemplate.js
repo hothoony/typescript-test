@@ -23,3 +23,4 @@ import { ListTemplate } from './classes/ListTemplate';
         list.render(doc, type.value, 'start');
     });
 })();
+//# sourceMappingURL=script-render-ListTemplate.js.map

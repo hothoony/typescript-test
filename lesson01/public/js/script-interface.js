@@ -9,3 +9,4 @@ import { Invoice } from "./classes/Invoice";
         console.log(doc.format());
     });
 })();
+//# sourceMappingURL=script-interface.js.map

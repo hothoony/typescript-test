@@ -16,3 +16,4 @@
     };
     greetPerson(me);
 })();
+//# sourceMappingURL=script-interface1.js.map

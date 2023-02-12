@@ -42,3 +42,4 @@
     // user4 = {name: 'james', age: 'aa', isLogin: true};
     // user4 = {name: 'james', age: 20, isLogin: true, hobbies: []};
 })();
+//# sourceMappingURL=script-explicit-type.js.map

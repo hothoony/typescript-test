@@ -30,3 +30,4 @@
     let result = add(1, 2);
     console.log(result);
 })();
+//# sourceMappingURL=script-function.js.map

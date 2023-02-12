@@ -24,3 +24,4 @@
         console.log(inv.client, inv.amount, inv.format());
     });
 })();
+//# sourceMappingURL=script-access-modifier.js.map

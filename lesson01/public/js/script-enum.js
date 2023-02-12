@@ -12,3 +12,4 @@
     console.log('ResourceType.FILM', ResourceType.FILM);
     console.log('ResourceType.DIRECTOR', ResourceType.DIRECTOR);
 })();
+//# sourceMappingURL=script-enum.js.map
