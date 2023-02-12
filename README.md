@@ -109,6 +109,9 @@ $ tsc script.ts -w
 1. `DEBUG CONSOLE` 에서 확인
 
 
+## TypeScript Basic Types
+- [TypeScript Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+
 ## type 정의
 ```typescript
 // explicit types
