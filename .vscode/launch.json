@@ -15,7 +15,7 @@
             "program": "${file}",
             // "program": "${workspaceFolder}/**/*.ts",
             // "program": "${workspaceFolder}/lesson01/src/ts-generic.ts",
-            "preLaunchTask": "tsc: build - lesson01/tsconfig-bak.json",
+            "preLaunchTask": "tsc: build - lesson01/tsconfig.json",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]

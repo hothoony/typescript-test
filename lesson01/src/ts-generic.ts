@@ -40,8 +40,20 @@
 
     console.log(doc3);
     console.log(doc4);
-    console.log('22');
+    
+    // ----------------------------------------------------------------
+
+    function identity<T>(arg: T): T {
+        return arg;
+    }
+    console.log(identity('aaa'));
+
+    function identity2<T>(arg: T[]): T[] {
+        console.log('length', arg.length);
+        return arg;
+    }
+    console.log(identity2(['bbb']));
    
 })();
 
-console.log('33');
+console.log('--> END <--');
