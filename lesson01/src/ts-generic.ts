@@ -53,6 +53,12 @@
         return arg;
     }
     console.log(identity2(['bbb']));
+
+    function identity3<T>(arg: Array<T>): Array<T> {
+        console.log('length', arg.length);
+        return arg;
+    }
+    console.log(identity3(['cc', 'dd']));
    
 })();
 
