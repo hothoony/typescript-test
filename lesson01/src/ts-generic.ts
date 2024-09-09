@@ -40,5 +40,8 @@
 
     console.log(doc3);
     console.log(doc4);
+    console.log('22');
    
 })();
+
+console.log('11');
